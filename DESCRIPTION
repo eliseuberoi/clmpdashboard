@@ -1,0 +1,32 @@
+Package: clmpdashboard
+Type: Package
+Title: Functions to compile data for MP activity dashboard
+Version: 0.1.1
+Author: Elise Uberoi
+Maintainer: Elise Uberoi <eliseuberoi@gmail.com>
+Description: This package enables users to get data on Members' activities in Parliament:
+    their roles on APPGs, the Early Day Motions they sign and the debates they participate in. 
+    The package includes functions to join activity data with Member data. 
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports:
+  dplyr,
+  httr,
+  jsonlite,
+  magrittr,
+  parlygroups,
+  purrr,
+  rlang,
+  rvest,
+  stringr,
+  tibble,
+  tidytext,
+  tm,
+  urltools,
+  xml2
+Suggests:
+    mockery,
+    testthat (>= 3.0.0)
+RoxygenNote: 7.1.1
+Config/testthat/edition: 3
