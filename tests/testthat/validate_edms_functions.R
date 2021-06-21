@@ -12,12 +12,10 @@ source("tests/testthat/validate.R")
 
 get_edms_list_mocks_data <- function() {
 
-    # Download get_edms_list for test period 2020-03-01 until 2020-03-29
-    # This means there is a purrr map call which doesn't work for the test
-    # But I cannot get it to download data for one week only?
+    # Download get_edms_list for test period 2020-03-01 until 2020-03-08
 
     url <- paste0("https://oralquestionsandmotions-api.parliament.uk/EarlyDayMotions/list?parameters.tabledStartDate=",
-                  "2020-03-01", "&parameters.tabledEndDate=", "2020-03-29",
+                  "2020-03-01", "&parameters.tabledEndDate=", "2020-03-08",
                   "&parameters.statuses=Published&parameters.take=100", collapse = ", ")
 
     m <- httr::GET(url)
@@ -47,7 +45,7 @@ get_edms_signatures_mocks_data <- function() {
 get_edms_list_data <- function() {
 
     # Download get_edms_list
-    m <- get_edms_list("2020-03-01", "2020-03-29")
+    m <- get_edms_list("2020-03-01", "2020-03-08")
     write(m, "get_edms_list_data")
 }
 

@@ -33,7 +33,7 @@ get_url <- function(mnis_id, start_date, end_date = Sys.Date()) {
 
 get_number <- function(url, pb){
 
-  pb$tick()$print()
+  pb$tick()
 
   html <- xml2::read_html(url)
 
@@ -60,7 +60,7 @@ get_number <- function(url, pb){
 get_debates <- function(members = MEMBERS, start_date, end_date = Sys.Date()) {
 
   urls <- purrr::map_dfr(members$MNIS_id, ~get_url(., start_date, end_date))
-  pb <- dplyr::progress_estimated(length(urls$url))
+  pb <- progress::progress_bar$new(total = length(urls$url))
   number_debates <- purrr::map_dfr(urls$url, ~get_number(., pb))
   member_debates <- dplyr::left_join(urls, number_debates)
 

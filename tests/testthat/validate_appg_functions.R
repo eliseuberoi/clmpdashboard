@@ -2,7 +2,7 @@
 
 # Imports ---------------------------------------------------------------------
 
-source("validate.R")
+source("tests/testthat/validate.R")
 
 # Mocks data ------------------------------------------------------------------
 
@@ -13,7 +13,8 @@ source("validate.R")
 get_officer_data_mocks_data <- function() {
 
     # Download officer data for 2021-06-02
-    m <- parlygroups::download_appg(register_date = "2021-06-02")
+    parlygroups::download_appg("2021-06-02")
+    m <- parlygroups::appg_officers()
     write(m, "get_officer_data_mocks_data")
 }
 

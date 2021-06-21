@@ -7,9 +7,9 @@
 
 get_full_name <- function(names) {
 
-  y <- stringr::str_split_fixed(names, ", ", n = Inf)
-  first_name <- stringr::str_extract(y[,2], "(\\w+)")
-  last_name <- y[,1]
+  split_names <- stringr::str_split_fixed(names, ", ", n = Inf)
+  first_name <- stringr::str_extract(split_names[,2], "(\\w+)")
+  last_name <- split_names[,1]
   full_name <- paste(last_name, first_name, sep = ", ")
 
 }

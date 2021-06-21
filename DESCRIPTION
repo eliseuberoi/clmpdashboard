@@ -16,6 +16,7 @@ Imports:
   jsonlite,
   magrittr,
   parlygroups,
+  progress,
   purrr,
   rlang,
   rvest,

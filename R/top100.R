@@ -145,4 +145,3 @@ get_top100 <- function(contributions_joined, members = MEMBERS) {
     top100
 
 }
-

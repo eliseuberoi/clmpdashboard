@@ -2,7 +2,7 @@
 % Please edit documentation in R/roles_functions.R
 \name{get_posts}
 \alias{get_posts}
-\title{Fetch data on the government and opposition posts MPs hold}
+\title{\code{get_posts} Downloads data on government and opposition posts}
 \usage{
 get_posts(members = MEMBERS)
 }

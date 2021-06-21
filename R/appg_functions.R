@@ -10,9 +10,12 @@
 
 get_officer_data <- function(date, mp_noble_names = c()) {
 
-  parlygroups::download_appg(register_date = date)
+  get_officers <- function(register_date) {
+    parlygroups::download_appg(register_date)
+    officers <- parlygroups::appg_officers()
+    }
 
-  officers <- parlygroups::appg_officers()
+  officers <- get_officers(register_date = date)
 
   # Keep back any MPs whose name as written starts with a noble title e.g. "Earl Jones"
   mp_nobles <- officers %>% dplyr::filter(.data$officer_name %in% mp_noble_names)

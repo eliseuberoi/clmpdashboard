@@ -48,7 +48,7 @@ test_that("get_edms_list processes results correctly.", {
         "PrimarySponsor.PartyColour",
         "PrimarySponsor.PhotoUrl")
 
-    obs <- get_edms_list("2020-03-01", "2020-03-29")
+    obs <- get_edms_list("2020-03-01", "2020-03-08")
     exp <- readRDS("data/get_edms_list_data.RData")
     compare_obs_exp(obs, exp, cols, "Id")
 })

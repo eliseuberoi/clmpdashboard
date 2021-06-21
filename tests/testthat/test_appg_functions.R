@@ -6,7 +6,7 @@ source("validate.R")
 
 # Mocks -----------------------------------------------------------------------
 
-mock_parlygroups <- function(register_date) {
+mock_get_officers <- function(register_date) {
     read("get_officer_data_mocks_data")
 }
 
@@ -14,7 +14,7 @@ mock_parlygroups <- function(register_date) {
 
 test_that("get_officer_data processes results correctly.", {
 
-    mockery::stub(get_officer_data, "parlygroups::download_appg", mock_parlygroups)
+    mockery::stub(get_officer_data, "get_officers", mock_get_officers)
 
     cols <- c(
         "title",
@@ -24,7 +24,10 @@ test_that("get_officer_data processes results correctly.", {
         "officer_name",
         "officer_party")
 
-    obs <- get_member_data()
+    obs <- get_officer_data("2021-06-02")
     exp <- readRDS("data/get_officer_data.RData")
     compare_obs_exp(obs, exp, cols, "title")
 })
+
+# first warning - this is in parly groups but i dont understand why it is calling that, it shoul read the mock data instead
+# the other warnings i think also happen inside parlygroups
