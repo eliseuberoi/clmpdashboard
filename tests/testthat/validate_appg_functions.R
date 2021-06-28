@@ -38,6 +38,6 @@ get_officer_data_validation_data <- function() {
 #' @keywords internal
 
 get_appg_test_data <- function() {
-        get_officer_data_mocks_data()
-        get_officer_data_validation_data()
+    get_officer_data_mocks_data()
+    get_officer_data_validation_data()
 }

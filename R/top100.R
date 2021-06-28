@@ -134,9 +134,18 @@ get_top100 <- function(contributions_joined, members = MEMBERS) {
             dplyr::filter(!.data$word %in% tidytext::stop_words$word) %>%
             dplyr::count(.data$word, sort = TRUE)
 
-        # Top 100
-        member_data <- member_data[1:100,]
-        member_data$full_name <- MP_name
+        # Get top 100 or all rows, whichever is smaller
+        if (nrow(member_data) > 0) {
+
+            last_row <- min(nrow(member_data), 100)
+            member_data <- member_data[1:last_row,]
+            member_data$full_name <- MP_name
+
+        } else {
+
+            tibble::tibble()
+        }
+
         member_data
     })
 

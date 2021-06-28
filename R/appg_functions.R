@@ -1,3 +1,16 @@
+#' Download raw data on APPG officers
+#'
+#' \code{get_officer_data} Downloads raw data on APPG officers
+#'
+#' @param date The date of the register to download ("yyyy-mm-dd")
+#' @param mp_noble_names A vector of names whose beginning equals a noble title, e.g. "Earl Jones"
+#' @return A tibble containing data on APPGs and their officers
+#' @keywords internal
+get_officers <- function(register_date) {
+    parlygroups::download_appg(register_date)
+    officers <- parlygroups::appg_officers()
+}
+
 #' Fetch and manipulate data on APPG officers
 #'
 #' \code{get_officer_data} Downloads data on MPs holding roles in APPGs
@@ -9,11 +22,6 @@
 #'
 
 get_officer_data <- function(date, mp_noble_names = c()) {
-
-  get_officers <- function(register_date) {
-    parlygroups::download_appg(register_date)
-    officers <- parlygroups::appg_officers()
-    }
 
   officers <- get_officers(register_date = date)
 

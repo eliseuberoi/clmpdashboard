@@ -19,7 +19,7 @@ test_that("get_top100 processes results correctly.", {
 
     obs <- get_top100(contributions_data)
     exp <- readRDS("data/get_top100_data.RData")
-    compare_obs_exp(obs, exp, cols, "MNIS_id")
+    compare_obs_exp(obs, exp, cols, "word")
 })
 
 #  test failing
