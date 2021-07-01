@@ -15,7 +15,7 @@ Install from Github using remotes.
 
 ```r
 install.packages("remotes")
-remotes::install_github("houseofcommonslibrary/clmpdashboard")
+remotes::install_github("eliseuberoi/clmpdashboard")
 ```
 
 ## Data download functions
