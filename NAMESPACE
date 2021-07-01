@@ -3,6 +3,7 @@
 export(fetch_appg_officers)
 export(fetch_edm_data)
 export(get_debates)
+export(get_full_name)
 export(get_members)
 export(get_posts)
 export(get_top100)

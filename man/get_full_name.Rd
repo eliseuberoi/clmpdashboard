@@ -15,4 +15,3 @@ A 'full name' vector with Members' names in standardised format
 \description{
 \code{get_full_name} Creates new name variable to enable joining Parliamentary search data with Member data
 }
-\keyword{export}
