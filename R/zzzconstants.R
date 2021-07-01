@@ -1,8 +1,6 @@
 ### Package constants
 
-get_NOBLE_TITLES <- function() {
-
-    NOBLE_TITLES <- c(
+NOBLE_TITLES <- c(
         "^Lord ",
         "^Baroness ",
         "^Viscount ",
@@ -13,28 +11,19 @@ get_NOBLE_TITLES <- function() {
         "^The Lord ",
         "^The Earl",
         "^The Viscount",
-        "^The Viscountess",
+        # "^The Viscountess",
         "^The Countess"
-    )
-}
+)
 
-get_MP_TITLES <- function() {
-
-    MP_TITLES <- c(
+MP_TITLES <- c(
         "^Mrs ",
         "^Ms ",
         "^Miss ",
         "^Mr ",
         "^Dr ",
         "^Sir ",
-        "^Dame "
-    )
-}
+        "^Dame ")
 
-
-NOBLE_TITLES <- get_NOBLE_TITLES()
-
-MP_TITLES <- get_MP_TITLES()
 
 MEMBERS <- get_members()
 
