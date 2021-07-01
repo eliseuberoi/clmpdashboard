@@ -2,7 +2,7 @@
 #'
 #' @param names A vector with Members' names (in activity data from Parliamentary Search)
 #' @return A 'full name' vector with Members' names in standardised format
-#' @keywords export
+#' @export
 #'
 
 get_full_name <- function(names) {
