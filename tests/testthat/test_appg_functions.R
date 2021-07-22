@@ -29,5 +29,4 @@ test_that("get_officer_data processes results correctly.", {
     compare_obs_exp(obs, exp, cols, "title")
 })
 
-# first warning - this is in parly groups but i dont understand why it is calling that, it shoul read the mock data instead
-# the other warnings i think also happen inside parlygroups
+

@@ -7,6 +7,7 @@ source("tests/testthat/validate_edms_functions.R")
 source("tests/testthat/validate_appg_functions.R")
 source("tests/testthat/validate_roles_functions.R")
 source("tests/testthat/validate_top100.R")
+source("tests/testthat/validate_divisions_functions.R")
 
 # Fetch all data --------------------------------------------------------------
 
@@ -15,3 +16,4 @@ get_edms_test_data()
 get_appg_test_data()
 get_roles_functions_test_data()
 get_top100_test_data()
+get_divisions_test_data()

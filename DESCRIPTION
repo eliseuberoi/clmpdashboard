@@ -5,7 +5,7 @@ Version: 0.1.1
 Author: Elise Uberoi
 Maintainer: Elise Uberoi <eliseuberoi@gmail.com>
 Description: This package enables users to get data on Members' activities in Parliament:
-    their roles on APPGs, the Early Day Motions they sign and the debates they participate in. 
+    including their roles on APPGs, the Early Day Motions they sign and the debates they participate in. 
     The package includes functions to join activity data with Member data. 
 License: MIT + file LICENSE
 Encoding: UTF-8
