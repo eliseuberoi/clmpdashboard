@@ -70,14 +70,14 @@ get_members <- function() {
   party_short <- dplyr::tibble(party = c("Labour", "Conservative",
                                          "Labour (Co-op)",
                                          "Scottish National Party",
-                                         "Sinn F\\u00e9in", "Democratic Unionist Party",
+                                         "Sinn Féin", "Democratic Unionist Party",
                                          "Liberal Democrat",
                                          "Social Democratic & Labour Party",
                                          "Independent", "Alliance", "Speaker",
-                                         "Plaid Cymru", "Green Party"),
+                                         "Plaid Cymru", "Green Party", "Alba Party"),
                                party_short = c("Lab", "Con", "Lab", "SNP",
                                                "SF", "DUP", "LD", "SDLP", "Ind",
-                                              "All", "Spk", "PC", "Green"))
+                                              "All", "Spk", "PC", "Green", "Alba"))
 
   members <- dplyr::left_join(members, party_short)
 
