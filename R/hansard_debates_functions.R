@@ -11,7 +11,7 @@
 
 get_url <- function(mnis_id, start_date, end_date = Sys.Date()) {
 
-  start <- "https://hansard.parliament.uk/search/MemberContributions?"
+  start <- "http://hansard.parliament.uk/search/MemberContributions?"
   mnis <- stringr::str_glue("memberId={mnis_id}")
   start_date <- stringr::str_glue("&startDate={start_date}")
   end_date <- stringr::str_glue("&endDate={end_date}")
@@ -26,14 +26,11 @@ get_url <- function(mnis_id, start_date, end_date = Sys.Date()) {
 #' \code{get_number} Find the number of debates an MP spoke in
 #'
 #' @param url The url showing the number of debates
-#' @param pb Generates a progress bar using the length of the vector of urls
 #' @return A tibble incuding an MP's url and the total number of debates they spoke in
 #' @keywords internal
 #'
 
-get_number <- function(url, pb){
-
-  pb$tick()
+get_number <- function(url){
 
   html <- xml2::read_html(url)
 
@@ -60,8 +57,7 @@ get_number <- function(url, pb){
 get_debates <- function(members = MEMBERS, start_date, end_date = Sys.Date()) {
 
   urls <- purrr::map_dfr(members$MNIS_id, ~get_url(., start_date, end_date))
-  pb <- progress::progress_bar$new(total = length(urls$url))
-  number_debates <- purrr::map_dfr(urls$url, ~get_number(., pb))
+  number_debates <- purrr::map_dfr(urls$url, ~get_number(.))
   member_debates <- dplyr::left_join(urls, number_debates)
 
   member_debates
